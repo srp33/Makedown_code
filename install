@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# See http://craig-russell.co.uk/2012/05/08/install-r-on-ubuntu.html#.UyHZEuddXks
-sudo gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
-sudo gpg -a --export E084DAB9 | sudo apt-key add -
+sudo apt-get install -y texlive haskell-platform
 
-echo "deb http://cran.fhcrc.org/bin/linux/ubuntu precise/" | sudo tee -a /etc/apt/sources.list
+cabal update
+cabal install pandoc pandoc-citeproc
 
-sudo apt-get -y update
-sudo apt-get install -y pandoc texlive
+#sudo wget http://hackage.haskell.org/package/pandoc-1.12.4.2/pandoc-1.12.4.2.tar.gz
+#sudo tar -zxvf pandoc-1.12.4.2.tar.gz
+#cd pandoc-1.12.4.2
