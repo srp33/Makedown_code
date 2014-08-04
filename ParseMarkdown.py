@@ -29,7 +29,7 @@ def buildFigure(filePath):
 
     newFilePath = filePath
     if filePath.endswith(".pdf"):
-        newFilePath = "/tmp/" + os.path.basename(inFilePath) + "__" + os.path.basename(filePath).replace(".pdf", ".png")
+        newFilePath = "Notebooks/" + os.path.basename(inFilePath) + "__" + os.path.basename(filePath).replace(".pdf", ".png")
         os.system("./scripts/convert_pdf_to_png %s %s" % (filePath, newFilePath))
 
     return "![](%s)\n" % newFilePath
