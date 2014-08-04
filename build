@@ -4,7 +4,7 @@ notebookFile="$1"
 
 if [ "$notebookFile" == "" ]
 then
-  notebookFile=Notebook.md
+  notebookFile=Notebooks/Notebook.md
 fi
 
 tmpFile="/tmp/$notebookFile"
