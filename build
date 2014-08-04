@@ -7,6 +7,10 @@ then
   notebookFile=Notebooks/Notebook.md
 fi
 
+echo test:
+echo $notebookFile
+exit
+
 tmpFile="/tmp/$notebookFile"
 outFile="${notebookFile/\.md/.html}"
 
