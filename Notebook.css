@@ -1,0 +1,10 @@
+<style type="text/css">
+  table { border: 2px solid black; border-collapse: separate; border-spacing=10px; }
+  th { border-bottom: 2px solid black; font-family: "Palatino Linotype"; }
+  tr.odd { background-color: #EEE; color: black; }
+  caption { font-weight: bold;  margin: 1em; }
+  td { font-family: "Courier New"; text-align: left;}
+  p { font-family: "Palatino Linotype"; }
+  h1, h2, h3, h4, h5, h6 { font-family: "Palatino Linotype"; }
+  .figure { padding: 20px 0px 0px 0px; }
+</style>

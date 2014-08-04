@@ -1,0 +1,14 @@
+#!/bin/bash
+
+inFile=$1
+outFile=$2
+
+#if [ -f $outFile ]
+#then
+#  echo $outFile already exists, so no conversion will be done.
+#else
+  echo Cropping $inFile
+  pdfcrop --margins 2 $inFile $inFile
+  echo Converting $inFile to PNG file.
+  convert -density 150x150 -trim $inFile -quality 100 -resize 100% -sharpen 0x1.0 $outFile
+#fi

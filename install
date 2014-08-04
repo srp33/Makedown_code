@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# See http://craig-russell.co.uk/2012/05/08/install-r-on-ubuntu.html#.UyHZEuddXks
+sudo gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+sudo gpg -a --export E084DAB9 | sudo apt-key add -
+
+echo "deb http://cran.fhcrc.org/bin/linux/ubuntu precise/" | sudo tee -a /etc/apt/sources.list
+
+sudo apt-get -y update
+sudo apt-get install -y pandoc texlive
