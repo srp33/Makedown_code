@@ -30,7 +30,7 @@ def buildFigure(filePath):
     newFilePath = filePath
     if filePath.endswith(".pdf"):
         newFilePath = "Notebooks/" + os.path.basename(inFilePath) + "__" + os.path.basename(filePath).replace(".pdf", ".png")
-        os.system("./scripts/convert_pdf_to_png %s %s" % (filePath, newFilePath))
+        os.system("./convert_pdf_to_png %s %s" % (filePath, newFilePath))
 
     return "![](%s)\n" % newFilePath
 
@@ -47,12 +47,12 @@ for line in inFile:
         continue
 
     if line.startswith("Table:"):
-        tableFilePath = line.rstrip().replace("Table:", "")
+        tableFilePath = line.rstrip().replace("Table:", "Notebooks/")
 
         if tableFilePath.endswith(".txt"):
             outFile.write(buildTable(tableFilePath))
     elif line.startswith("Figure:"):
-        figureFilePath = line.rstrip().replace("Figure:", "")
+        figureFilePath = line.rstrip().replace("Figure:", "Notebooks/")
         outFile.write(buildFigure(figureFilePath))
     else:
         outFile.write(line)
