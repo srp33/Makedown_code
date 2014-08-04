@@ -9,7 +9,7 @@ then
   notebookFile=Notebooks/Notebook.md
 fi
 
-tmpFile="/tmp/$notebookFile"
+tmpFile="${notebookFile/\.md/.tmp}"
 outFile="${notebookFile/\.md/.html}"
 
 if [ ! -f $notebookFile ]
@@ -17,9 +17,6 @@ then
   echo No $notebookFile exists.
   exit 1
 fi
-
-mkdir -p $(dirname $tmpFile)
-mkdir -p $(dirname $outFile)
 
 python ParseMarkdown.py "$notebookFile" "$tmpFile"
 ##pandoc /tmp/Notebook.md -V geometry:margin=1in -o Notebook.pdf
@@ -33,4 +30,4 @@ then
   echo $outFile has been created.
 fi
 
-rm -f $tmpFile /tmp/${notebookFile}*
+rm -f $tmpFile
