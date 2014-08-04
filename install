@@ -4,7 +4,3 @@ sudo apt-get install -y texlive haskell-platform
 
 cabal update
 cabal install pandoc pandoc-citeproc
-
-#sudo wget http://hackage.haskell.org/package/pandoc-1.12.4.2/pandoc-1.12.4.2.tar.gz
-#sudo tar -zxvf pandoc-1.12.4.2.tar.gz
-#cd pandoc-1.12.4.2
