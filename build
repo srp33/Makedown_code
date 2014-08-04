@@ -18,6 +18,7 @@ then
   exit 1
 fi
 
+mkdir -p $(dirname $tmpFile)
 mkdir -p $(dirname $outFile)
 
 python ParseMarkdown.py "$notebookFile" "$tmpFile"
