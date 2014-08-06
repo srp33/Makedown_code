@@ -13,4 +13,4 @@ sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 
 echo "Installing pandoc (progress bars may not show)"
-sudo docker run -t -i -v `pwd`:/workspace ksoichiro/pandoc pandoc -v
+sudo docker run -v `pwd`:/workspace ksoichiro/pandoc pandoc -v
