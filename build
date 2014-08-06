@@ -9,7 +9,7 @@ then
   notebookFile=Notebooks/Notebook.md
 fi
 
-tmpFile="${notebookFile/\.md/.tmp}"
+tmpFile="${notebookFile/\.md/.tmp.md}"
 outFile="${notebookFile/\.md/.html}"
 
 if [ ! -f $notebookFile ]
@@ -22,9 +22,9 @@ fi
 
 sudo python ParseMarkdown.py "$notebookFile" "$tmpFile"
 ##pandoc /tmp/Notebook.md -V geometry:margin=1in -o Notebook.pdf
-echo got here 3
+pwd
+ls
 sudo docker run -t -i -v `pwd`:/workspace ksoichiro/pandoc pandoc -s -S --self-contained --toc -H Notebook.css $tmpFile -o $outFile
-echo got here 4
 sudo python ReplaceText.py $outFile "<div id=\"TOC\">" "<h1>Outline</h1>\n<div id=\"TOC\">" $outFile
 sudo python ReplaceText.py $outFile "<img" "<img width='800'" $outFile
 sudo python RemoveRedundantAnchors.py $outFile
