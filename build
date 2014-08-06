@@ -25,7 +25,7 @@ sudo python ParseMarkdown.py "$notebookFile" "$tmpFile"
 cp Notebook.css Notebooks/
 
 cd $(dirname $notebookFile)
-echo sudo docker run -t -i -v $(pwd):/workspace ksoichiro/pandoc pandoc -s -S --self-contained --toc -H Notebook.css $(basename $tmpFile) -o $(basename $outFile)
+sudo docker run -t -i -v $(pwd):/workspace ksoichiro/pandoc pandoc -s -S --self-contained --toc -H Notebook.css $(basename $tmpFile) -o $(basename $outFile)
 ##pandoc /tmp/Notebook.md -V geometry:margin=1in -o Notebook.pdf
 cd
 exit
