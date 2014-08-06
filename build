@@ -2,6 +2,7 @@
 
 set -o errexit
 
+echo got here
 notebookFile="$1"
 
 if [ "$notebookFile" == "" ]
