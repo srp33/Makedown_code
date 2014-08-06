@@ -1,22 +1,9 @@
 #!/bin/bash
 
-## Install pandoc
-#sudo apt-get install -y texlive haskell-platform
-#cabal update
-#cabal install pandoc pandoc-citeproc
-
-# Install Docker - See 
+# Install Docker - See http://docs.docker.com/installation/ubuntulinux/#ubuntu-trusty-1404-lts-64-bit
 sudo apt-get update
 sudo apt-get install docker.io -y
 sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
-
-#sudo apt-get update
-#sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring apt-transport-https -y
-#sudo reboot
-#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-#sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
-#sudo apt-get update
-#sudo apt-get install lxc-docker -y
-###sudo docker run -t -i -v `pwd`:/workspace ksoichiro/pandoc pandoc --version
-#alias pandoc='sudo docker run -t -i -v `pwd`:/workspace ksoichiro/pandoc pandoc'
+sudo docker run -t -i -v `pwd`:/workspace ksoichiro/pandoc pandoc --version
+alias pandoc='sudo docker run -t -i -v `pwd`:/workspace ksoichiro/pandoc pandoc'
